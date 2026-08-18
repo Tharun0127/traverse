@@ -1,0 +1,94 @@
+@import "tailwindcss";
+
+:root {
+  --bg: #07090c;
+  --panel: #0d1117;
+  --panel-2: #11161d;
+  --line: #1e2733;
+  --text: #d7dee8;
+  --dim: #7d8898;
+  --dimmer: #4d5766;
+  --inject: #f97362;
+  --traverse: #4ade9b;
+  --warn: #f5b74e;
+  --accent: #6ea8fe;
+}
+
+html,
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.mono {
+  font-family: ui-monospace, "SFMono-Regular", "JetBrains Mono", Menlo, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--line);
+}
+
+.hairline {
+  border-color: var(--line);
+}
+
+/* Counter that visibly climbs. The divergence is the whole demo. */
+.counter {
+  font-family: ui-monospace, "SFMono-Regular", "JetBrains Mono", Menlo, Consolas, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+.bar {
+  transition: width 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.node-chip {
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+
+@keyframes pulse-in {
+  from {
+    transform: scale(0.94);
+    opacity: 0.4;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.pulse-in {
+  animation: pulse-in 260ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0.25;
+  }
+}
+.blink {
+  animation: blink 1s steps(2, start) infinite;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2833;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2c3947;
+}
+
+a {
+  color: var(--accent);
+}

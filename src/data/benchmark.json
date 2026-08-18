@@ -1,0 +1,1229 @@
+{
+  "generatedBy": "scripts/benchmark.ts",
+  "method": {
+    "tokenizer": "cl100k_base (gpt-tokenizer) as a proxy for Claude's tokenizer, which is not public",
+    "model": "none — every figure below is computed deterministically",
+    "corpus": "6 documents authored for this project",
+    "questions": 52,
+    "taskTypes": 8
+  },
+  "tokenEconomics": {
+    "meanReduction": 0.6459055391023891,
+    "medianReduction": 0.76,
+    "bestCase": 0.9338842975206612,
+    "worstCase": -0.1226277372262774,
+    "totalInjectionTokens": 61039,
+    "totalTraversalTokens": 18067,
+    "byDocClass": [
+      {
+        "docId": "handbook",
+        "title": "Engineering Handbook",
+        "cls": "Knowledge Base (large)",
+        "questions": 12,
+        "docTokens": 2160,
+        "nodes": 43,
+        "meanReduction": 0.8444470581235096,
+        "meanInjection": 2177,
+        "meanTraversal": 339
+      },
+      {
+        "docId": "kb",
+        "title": "Platform Engineering KB",
+        "cls": "Knowledge Base",
+        "questions": 6,
+        "docTokens": 806,
+        "nodes": 12,
+        "meanReduction": 0.6343762490809542,
+        "meanInjection": 823,
+        "meanTraversal": 301
+      },
+      {
+        "docId": "plan",
+        "title": "Search Re-Platform Plan",
+        "cls": "Execution Plan",
+        "questions": 8,
+        "docTokens": 819,
+        "nodes": 9,
+        "meanReduction": 0.6161724698972066,
+        "meanInjection": 836,
+        "meanTraversal": 321
+      },
+      {
+        "docId": "runbook",
+        "title": "Payments Production Runbook",
+        "cls": "Operational Runbook",
+        "questions": 10,
+        "docTokens": 924,
+        "nodes": 10,
+        "meanReduction": 0.5305283221231435,
+        "meanInjection": 943,
+        "meanTraversal": 443
+      },
+      {
+        "docId": "skillfile",
+        "title": "Skill: Repository Triage",
+        "cls": "Skill File",
+        "questions": 6,
+        "docTokens": 667,
+        "nodes": 9,
+        "meanReduction": 0.29730643584346533,
+        "meanInjection": 684,
+        "meanTraversal": 481
+      },
+      {
+        "docId": "techdoc",
+        "title": "Ledger API Documentation",
+        "cls": "Technical Documentation",
+        "questions": 10,
+        "docTokens": 957,
+        "nodes": 10,
+        "meanReduction": 0.7628964245886509,
+        "meanInjection": 975,
+        "meanTraversal": 231
+      }
+    ],
+    "byTask": [
+      {
+        "task": "information-lookup",
+        "questions": 23,
+        "meanReduction": 0.7372032696080426
+      },
+      {
+        "task": "procedure-execution",
+        "questions": 4,
+        "meanReduction": 0.5756127585793636
+      },
+      {
+        "task": "multi-step-planning",
+        "questions": 5,
+        "meanReduction": 0.4612538139239355
+      },
+      {
+        "task": "role-conditional-access",
+        "questions": 1,
+        "meanReduction": 0.6812652068126521
+      },
+      {
+        "task": "cross-node-reasoning",
+        "questions": 10,
+        "meanReduction": 0.5836311110256203
+      },
+      {
+        "task": "update-detection",
+        "questions": 2,
+        "meanReduction": 0.44094132817537074
+      },
+      {
+        "task": "assertion-verification",
+        "questions": 5,
+        "meanReduction": 0.6071869149378359
+      },
+      {
+        "task": "multi-agent-handoff",
+        "questions": 2,
+        "meanReduction": 0.793649590146671
+      }
+    ],
+    "perQuestion": [
+      {
+        "id": "rb-1",
+        "docId": "runbook",
+        "task": "information-lookup",
+        "question": "What is the canary threshold for error rate?",
+        "injectionTokens": 942,
+        "traversalTokens": 544,
+        "breakdown": {
+          "index": 48,
+          "dense": 70,
+          "full": 426
+        },
+        "reduction": 0.42250530785562634,
+        "injectionCost": 0.003726,
+        "traversalCost": 0.002532,
+        "nodesRead": 3,
+        "totalNodes": 10
+      },
+      {
+        "id": "rb-2",
+        "docId": "runbook",
+        "task": "procedure-execution",
+        "question": "What command rolls back production to the previous version?",
+        "injectionTokens": 942,
+        "traversalTokens": 531,
+        "breakdown": {
+          "index": 101,
+          "dense": 157,
+          "full": 273
+        },
+        "reduction": 0.43630573248407645,
+        "injectionCost": 0.003726,
+        "traversalCost": 0.002493,
+        "nodesRead": 2,
+        "totalNodes": 10
+      },
+      {
+        "id": "rb-3",
+        "docId": "runbook",
+        "task": "information-lookup",
+        "question": "How long does a rollback take?",
+        "injectionTokens": 939,
+        "traversalTokens": 366,
+        "breakdown": {
+          "index": 45,
+          "dense": 66,
+          "full": 255
+        },
+        "reduction": 0.610223642172524,
+        "injectionCost": 0.003717,
+        "traversalCost": 0.0019979999999999998,
+        "nodesRead": 2,
+        "totalNodes": 10
+      },
+      {
+        "id": "rb-4",
+        "docId": "runbook",
+        "task": "cross-node-reasoning",
+        "question": "If a deploy included a contract migration and production is broken, can I just roll back the code?",
+        "injectionTokens": 952,
+        "traversalTokens": 570,
+        "breakdown": {
+          "index": 157,
+          "dense": 158,
+          "full": 255
+        },
+        "reduction": 0.4012605042016807,
+        "injectionCost": 0.003756,
+        "traversalCost": 0.00261,
+        "nodesRead": 2,
+        "totalNodes": 10
+      },
+      {
+        "id": "rb-5",
+        "docId": "runbook",
+        "task": "information-lookup",
+        "question": "How long until an unacknowledged page escalates to the secondary?",
+        "injectionTokens": 947,
+        "traversalTokens": 349,
+        "breakdown": {
+          "index": 47,
+          "dense": 75,
+          "full": 227
+        },
+        "reduction": 0.631467793030623,
+        "injectionCost": 0.0037410000000000004,
+        "traversalCost": 0.0019470000000000002,
+        "nodesRead": 2,
+        "totalNodes": 10
+      },
+      {
+        "id": "rb-6",
+        "docId": "runbook",
+        "task": "multi-step-planning",
+        "question": "What are the steps to deploy to production, in order?",
+        "injectionTokens": 944,
+        "traversalTokens": 645,
+        "breakdown": {
+          "index": 123,
+          "dense": 162,
+          "full": 360
+        },
+        "reduction": 0.3167372881355932,
+        "injectionCost": 0.003732,
+        "traversalCost": 0.002835,
+        "nodesRead": 3,
+        "totalNodes": 10
+      },
+      {
+        "id": "rb-7",
+        "docId": "runbook",
+        "task": "assertion-verification",
+        "question": "What does the verify script check?",
+        "injectionTokens": 939,
+        "traversalTokens": 182,
+        "breakdown": {
+          "index": 30,
+          "dense": 41,
+          "full": 111
+        },
+        "reduction": 0.8061767838125665,
+        "injectionCost": 0.003717,
+        "traversalCost": 0.001446,
+        "nodesRead": 1,
+        "totalNodes": 10
+      },
+      {
+        "id": "rb-8",
+        "docId": "runbook",
+        "task": "information-lookup",
+        "question": "What counts as a SEV1?",
+        "injectionTokens": 940,
+        "traversalTokens": 190,
+        "breakdown": {
+          "index": 29,
+          "dense": 43,
+          "full": 118
+        },
+        "reduction": 0.7978723404255319,
+        "injectionCost": 0.00372,
+        "traversalCost": 0.00147,
+        "nodesRead": 1,
+        "totalNodes": 10
+      },
+      {
+        "id": "rb-9",
+        "docId": "runbook",
+        "task": "update-detection",
+        "question": "Where do the canary thresholds live?",
+        "injectionTokens": 940,
+        "traversalTokens": 544,
+        "breakdown": {
+          "index": 48,
+          "dense": 70,
+          "full": 426
+        },
+        "reduction": 0.4212765957446809,
+        "injectionCost": 0.00372,
+        "traversalCost": 0.002532,
+        "nodesRead": 3,
+        "totalNodes": 10
+      },
+      {
+        "id": "rb-10",
+        "docId": "runbook",
+        "task": "cross-node-reasoning",
+        "question": "Elevated 500s just after a deploy — what do I do first?",
+        "injectionTokens": 947,
+        "traversalTokens": 510,
+        "breakdown": {
+          "index": 104,
+          "dense": 165,
+          "full": 241
+        },
+        "reduction": 0.46145723336853217,
+        "injectionCost": 0.0037410000000000004,
+        "traversalCost": 0.00243,
+        "nodesRead": 2,
+        "totalNodes": 10
+      },
+      {
+        "id": "td-1",
+        "docId": "techdoc",
+        "task": "information-lookup",
+        "question": "How do I send ten dollars and fifty cents?",
+        "injectionTokens": 975,
+        "traversalTokens": 234,
+        "breakdown": {
+          "index": 145,
+          "dense": 89,
+          "full": 0
+        },
+        "reduction": 0.76,
+        "injectionCost": 0.0038249999999999994,
+        "traversalCost": 0.001602,
+        "nodesRead": 0,
+        "totalNodes": 10
+      },
+      {
+        "id": "td-2",
+        "docId": "techdoc",
+        "task": "cross-node-reasoning",
+        "question": "What happens if I reuse an idempotency key with a different body?",
+        "injectionTokens": 981,
+        "traversalTokens": 224,
+        "breakdown": {
+          "index": 29,
+          "dense": 42,
+          "full": 153
+        },
+        "reduction": 0.7716615698267074,
+        "injectionCost": 0.003843,
+        "traversalCost": 0.001572,
+        "nodesRead": 1,
+        "totalNodes": 10
+      },
+      {
+        "id": "td-3",
+        "docId": "techdoc",
+        "task": "information-lookup",
+        "question": "What is the write rate limit?",
+        "injectionTokens": 972,
+        "traversalTokens": 190,
+        "breakdown": {
+          "index": 28,
+          "dense": 38,
+          "full": 124
+        },
+        "reduction": 0.8045267489711934,
+        "injectionCost": 0.003816,
+        "traversalCost": 0.00147,
+        "nodesRead": 1,
+        "totalNodes": 10
+      },
+      {
+        "id": "td-4",
+        "docId": "techdoc",
+        "task": "assertion-verification",
+        "question": "Should I retry a 409 concurrent_write?",
+        "injectionTokens": 974,
+        "traversalTokens": 201,
+        "breakdown": {
+          "index": 28,
+          "dense": 39,
+          "full": 134
+        },
+        "reduction": 0.7936344969199178,
+        "injectionCost": 0.003822,
+        "traversalCost": 0.001503,
+        "nodesRead": 1,
+        "totalNodes": 10
+      },
+      {
+        "id": "td-5",
+        "docId": "techdoc",
+        "task": "procedure-execution",
+        "question": "How do I verify a webhook signature correctly?",
+        "injectionTokens": 974,
+        "traversalTokens": 193,
+        "breakdown": {
+          "index": 27,
+          "dense": 39,
+          "full": 127
+        },
+        "reduction": 0.8018480492813141,
+        "injectionCost": 0.003822,
+        "traversalCost": 0.0014789999999999998,
+        "nodesRead": 1,
+        "totalNodes": 10
+      },
+      {
+        "id": "td-6",
+        "docId": "techdoc",
+        "task": "information-lookup",
+        "question": "How many accounts can one snapshot call return?",
+        "injectionTokens": 974,
+        "traversalTokens": 391,
+        "breakdown": {
+          "index": 66,
+          "dense": 102,
+          "full": 223
+        },
+        "reduction": 0.5985626283367557,
+        "injectionCost": 0.003822,
+        "traversalCost": 0.002073,
+        "nodesRead": 2,
+        "totalNodes": 10
+      },
+      {
+        "id": "td-7",
+        "docId": "techdoc",
+        "task": "cross-node-reasoning",
+        "question": "Can I use the snapshot endpoint to authorize a payment?",
+        "injectionTokens": 976,
+        "traversalTokens": 150,
+        "breakdown": {
+          "index": 27,
+          "dense": 37,
+          "full": 86
+        },
+        "reduction": 0.8463114754098361,
+        "injectionCost": 0.003828,
+        "traversalCost": 0.00135,
+        "nodesRead": 1,
+        "totalNodes": 10
+      },
+      {
+        "id": "td-8",
+        "docId": "techdoc",
+        "task": "information-lookup",
+        "question": "How do I correct a mistaken event?",
+        "injectionTokens": 973,
+        "traversalTokens": 226,
+        "breakdown": {
+          "index": 28,
+          "dense": 38,
+          "full": 160
+        },
+        "reduction": 0.7677286742034943,
+        "injectionCost": 0.0038190000000000003,
+        "traversalCost": 0.001578,
+        "nodesRead": 1,
+        "totalNodes": 10
+      },
+      {
+        "id": "td-9",
+        "docId": "techdoc",
+        "task": "information-lookup",
+        "question": "How long do cursors last?",
+        "injectionTokens": 972,
+        "traversalTokens": 164,
+        "breakdown": {
+          "index": 26,
+          "dense": 36,
+          "full": 102
+        },
+        "reduction": 0.831275720164609,
+        "injectionCost": 0.003816,
+        "traversalCost": 0.001392,
+        "nodesRead": 1,
+        "totalNodes": 10
+      },
+      {
+        "id": "td-10",
+        "docId": "techdoc",
+        "task": "multi-agent-handoff",
+        "question": "Summarise for another agent: what scope is needed to close an account?",
+        "injectionTokens": 981,
+        "traversalTokens": 340,
+        "breakdown": {
+          "index": 47,
+          "dense": 70,
+          "full": 223
+        },
+        "reduction": 0.6534148827726809,
+        "injectionCost": 0.003843,
+        "traversalCost": 0.00192,
+        "nodesRead": 2,
+        "totalNodes": 10
+      },
+      {
+        "id": "pl-1",
+        "docId": "plan",
+        "task": "information-lookup",
+        "question": "What is the target p95 latency?",
+        "injectionTokens": 835,
+        "traversalTokens": 153,
+        "breakdown": {
+          "index": 28,
+          "dense": 41,
+          "full": 84
+        },
+        "reduction": 0.8167664670658683,
+        "injectionCost": 0.003405,
+        "traversalCost": 0.001359,
+        "nodesRead": 1,
+        "totalNodes": 9
+      },
+      {
+        "id": "pl-2",
+        "docId": "plan",
+        "task": "multi-step-planning",
+        "question": "What are the four phases in order?",
+        "injectionTokens": 835,
+        "traversalTokens": 508,
+        "breakdown": {
+          "index": 94,
+          "dense": 141,
+          "full": 273
+        },
+        "reduction": 0.3916167664670659,
+        "injectionCost": 0.003405,
+        "traversalCost": 0.002424,
+        "nodesRead": 2,
+        "totalNodes": 9
+      },
+      {
+        "id": "pl-3",
+        "docId": "plan",
+        "task": "cross-node-reasoning",
+        "question": "What is the critical path item and why?",
+        "injectionTokens": 836,
+        "traversalTokens": 245,
+        "breakdown": {
+          "index": 150,
+          "dense": 95,
+          "full": 0
+        },
+        "reduction": 0.7069377990430622,
+        "injectionCost": 0.0034080000000000004,
+        "traversalCost": 0.001635,
+        "nodesRead": 0,
+        "totalNodes": 9
+      },
+      {
+        "id": "pl-4",
+        "docId": "plan",
+        "task": "information-lookup",
+        "question": "When does the November freeze begin?",
+        "injectionTokens": 834,
+        "traversalTokens": 245,
+        "breakdown": {
+          "index": 150,
+          "dense": 95,
+          "full": 0
+        },
+        "reduction": 0.7062350119904077,
+        "injectionCost": 0.0034019999999999996,
+        "traversalCost": 0.001635,
+        "nodesRead": 0,
+        "totalNodes": 9
+      },
+      {
+        "id": "pl-5",
+        "docId": "plan",
+        "task": "cross-node-reasoning",
+        "question": "Why can't Phase 2 start before Phase 1 is stable?",
+        "injectionTokens": 841,
+        "traversalTokens": 559,
+        "breakdown": {
+          "index": 114,
+          "dense": 172,
+          "full": 273
+        },
+        "reduction": 0.3353151010701546,
+        "injectionCost": 0.003423,
+        "traversalCost": 0.0025770000000000003,
+        "nodesRead": 2,
+        "totalNodes": 9
+      },
+      {
+        "id": "pl-6",
+        "docId": "plan",
+        "task": "information-lookup",
+        "question": "Is personalised ranking part of this migration?",
+        "injectionTokens": 835,
+        "traversalTokens": 163,
+        "breakdown": {
+          "index": 33,
+          "dense": 44,
+          "full": 86
+        },
+        "reduction": 0.8047904191616766,
+        "injectionCost": 0.003405,
+        "traversalCost": 0.001389,
+        "nodesRead": 1,
+        "totalNodes": 9
+      },
+      {
+        "id": "pl-7",
+        "docId": "plan",
+        "task": "assertion-verification",
+        "question": "What is the exit criterion for shadow indexing?",
+        "injectionTokens": 836,
+        "traversalTokens": 189,
+        "breakdown": {
+          "index": 33,
+          "dense": 44,
+          "full": 112
+        },
+        "reduction": 0.7739234449760766,
+        "injectionCost": 0.0034080000000000004,
+        "traversalCost": 0.001467,
+        "nodesRead": 1,
+        "totalNodes": 9
+      },
+      {
+        "id": "pl-8",
+        "docId": "plan",
+        "task": "multi-step-planning",
+        "question": "What is the latest date Phase 3 must begin?",
+        "injectionTokens": 838,
+        "traversalTokens": 508,
+        "breakdown": {
+          "index": 94,
+          "dense": 141,
+          "full": 273
+        },
+        "reduction": 0.39379474940334125,
+        "injectionCost": 0.0034139999999999995,
+        "traversalCost": 0.002424,
+        "nodesRead": 2,
+        "totalNodes": 9
+      },
+      {
+        "id": "sf-1",
+        "docId": "skillfile",
+        "task": "procedure-execution",
+        "question": "What should I read first in an unfamiliar repository?",
+        "injectionTokens": 685,
+        "traversalTokens": 501,
+        "breakdown": {
+          "index": 93,
+          "dense": 140,
+          "full": 268
+        },
+        "reduction": 0.26861313868613135,
+        "injectionCost": 0.002955,
+        "traversalCost": 0.0024029999999999998,
+        "nodesRead": 2,
+        "totalNodes": 9
+      },
+      {
+        "id": "sf-2",
+        "docId": "skillfile",
+        "task": "information-lookup",
+        "question": "What share of context budget should triage cost?",
+        "injectionTokens": 685,
+        "traversalTokens": 245,
+        "breakdown": {
+          "index": 50,
+          "dense": 73,
+          "full": 122
+        },
+        "reduction": 0.6423357664233577,
+        "injectionCost": 0.002955,
+        "traversalCost": 0.001635,
+        "nodesRead": 2,
+        "totalNodes": 9
+      },
+      {
+        "id": "sf-3",
+        "docId": "skillfile",
+        "task": "cross-node-reasoning",
+        "question": "Why prefer changes at the leaves?",
+        "injectionTokens": 682,
+        "traversalTokens": 724,
+        "breakdown": {
+          "index": 96,
+          "dense": 143,
+          "full": 485
+        },
+        "reduction": -0.061583577712609916,
+        "injectionCost": 0.002946,
+        "traversalCost": 0.003072,
+        "nodesRead": 4,
+        "totalNodes": 9
+      },
+      {
+        "id": "sf-4",
+        "docId": "skillfile",
+        "task": "information-lookup",
+        "question": "Should I list every file recursively first?",
+        "injectionTokens": 683,
+        "traversalTokens": 197,
+        "breakdown": {
+          "index": 34,
+          "dense": 45,
+          "full": 118
+        },
+        "reduction": 0.7115666178623719,
+        "injectionCost": 0.0029490000000000002,
+        "traversalCost": 0.001491,
+        "nodesRead": 1,
+        "totalNodes": 9
+      },
+      {
+        "id": "sf-5",
+        "docId": "skillfile",
+        "task": "multi-step-planning",
+        "question": "What are the five triage steps?",
+        "injectionTokens": 683,
+        "traversalTokens": 447,
+        "breakdown": {
+          "index": 120,
+          "dense": 175,
+          "full": 152
+        },
+        "reduction": 0.34553440702781846,
+        "injectionCost": 0.0029490000000000002,
+        "traversalCost": 0.002241,
+        "nodesRead": 2,
+        "totalNodes": 9
+      },
+      {
+        "id": "sf-6",
+        "docId": "skillfile",
+        "task": "assertion-verification",
+        "question": "Should I run the test suite before my change?",
+        "injectionTokens": 685,
+        "traversalTokens": 769,
+        "breakdown": {
+          "index": 138,
+          "dense": 175,
+          "full": 456
+        },
+        "reduction": -0.1226277372262774,
+        "injectionCost": 0.002955,
+        "traversalCost": 0.0032069999999999998,
+        "nodesRead": 4,
+        "totalNodes": 9
+      },
+      {
+        "id": "kb-1",
+        "docId": "kb",
+        "task": "information-lookup",
+        "question": "How long are debug logs kept?",
+        "injectionTokens": 821,
+        "traversalTokens": 203,
+        "breakdown": {
+          "index": 33,
+          "dense": 44,
+          "full": 126
+        },
+        "reduction": 0.7527405602923265,
+        "injectionCost": 0.0033629999999999997,
+        "traversalCost": 0.001509,
+        "nodesRead": 1,
+        "totalNodes": 12
+      },
+      {
+        "id": "kb-2",
+        "docId": "kb",
+        "task": "information-lookup",
+        "question": "Can I run a load test against production?",
+        "injectionTokens": 823,
+        "traversalTokens": 507,
+        "breakdown": {
+          "index": 86,
+          "dense": 116,
+          "full": 305
+        },
+        "reduction": 0.38396111786148235,
+        "injectionCost": 0.0033689999999999996,
+        "traversalCost": 0.0024209999999999995,
+        "nodesRead": 3,
+        "totalNodes": 12
+      },
+      {
+        "id": "kb-3",
+        "docId": "kb",
+        "task": "cross-node-reasoning",
+        "question": "My build failed with workspace not clean. What do I do?",
+        "injectionTokens": 827,
+        "traversalTokens": 201,
+        "breakdown": {
+          "index": 36,
+          "dense": 46,
+          "full": 119
+        },
+        "reduction": 0.7569528415961306,
+        "injectionCost": 0.0033810000000000003,
+        "traversalCost": 0.001503,
+        "nodesRead": 1,
+        "totalNodes": 12
+      },
+      {
+        "id": "kb-4",
+        "docId": "kb",
+        "task": "role-conditional-access",
+        "question": "How do I get billing dashboard access?",
+        "injectionTokens": 822,
+        "traversalTokens": 262,
+        "breakdown": {
+          "index": 59,
+          "dense": 79,
+          "full": 124
+        },
+        "reduction": 0.6812652068126521,
+        "injectionCost": 0.003366,
+        "traversalCost": 0.001686,
+        "nodesRead": 2,
+        "totalNodes": 12
+      },
+      {
+        "id": "kb-5",
+        "docId": "kb",
+        "task": "information-lookup",
+        "question": "How often are secrets rotated?",
+        "injectionTokens": 820,
+        "traversalTokens": 188,
+        "breakdown": {
+          "index": 33,
+          "dense": 44,
+          "full": 111
+        },
+        "reduction": 0.7707317073170732,
+        "injectionCost": 0.00336,
+        "traversalCost": 0.001464,
+        "nodesRead": 1,
+        "totalNodes": 12
+      },
+      {
+        "id": "kb-6",
+        "docId": "kb",
+        "task": "update-detection",
+        "question": "What is the maximum duration for a production database credential?",
+        "injectionTokens": 825,
+        "traversalTokens": 445,
+        "breakdown": {
+          "index": 60,
+          "dense": 80,
+          "full": 305
+        },
+        "reduction": 0.4606060606060606,
+        "injectionCost": 0.0033749999999999995,
+        "traversalCost": 0.002235,
+        "nodesRead": 3,
+        "totalNodes": 12
+      },
+      {
+        "id": "hb-1",
+        "docId": "handbook",
+        "task": "information-lookup",
+        "question": "What is the pull request size limit?",
+        "injectionTokens": 2176,
+        "traversalTokens": 155,
+        "breakdown": {
+          "index": 27,
+          "dense": 37,
+          "full": 91
+        },
+        "reduction": 0.9287683823529411,
+        "injectionCost": 0.007428,
+        "traversalCost": 0.001365,
+        "nodesRead": 1,
+        "totalNodes": 43
+      },
+      {
+        "id": "hb-2",
+        "docId": "handbook",
+        "task": "information-lookup",
+        "question": "How long does a flaky test get before deletion?",
+        "injectionTokens": 2179,
+        "traversalTokens": 482,
+        "breakdown": {
+          "index": 139,
+          "dense": 149,
+          "full": 194
+        },
+        "reduction": 0.778797613584213,
+        "injectionCost": 0.007436999999999999,
+        "traversalCost": 0.002346,
+        "nodesRead": 2,
+        "totalNodes": 43
+      },
+      {
+        "id": "hb-3",
+        "docId": "handbook",
+        "task": "information-lookup",
+        "question": "How many approvals does a shared library change need?",
+        "injectionTokens": 2178,
+        "traversalTokens": 427,
+        "breakdown": {
+          "index": 101,
+          "dense": 157,
+          "full": 169
+        },
+        "reduction": 0.8039485766758494,
+        "injectionCost": 0.007434,
+        "traversalCost": 0.0021809999999999998,
+        "nodesRead": 2,
+        "totalNodes": 43
+      },
+      {
+        "id": "hb-4",
+        "docId": "handbook",
+        "task": "cross-node-reasoning",
+        "question": "Can one service read another service's database directly?",
+        "injectionTokens": 2178,
+        "traversalTokens": 511,
+        "breakdown": {
+          "index": 185,
+          "dense": 156,
+          "full": 170
+        },
+        "reduction": 0.7653810835629018,
+        "injectionCost": 0.007434,
+        "traversalCost": 0.002433,
+        "nodesRead": 2,
+        "totalNodes": 43
+      },
+      {
+        "id": "hb-5",
+        "docId": "handbook",
+        "task": "information-lookup",
+        "question": "Which languages are supported?",
+        "injectionTokens": 2173,
+        "traversalTokens": 257,
+        "breakdown": {
+          "index": 169,
+          "dense": 88,
+          "full": 0
+        },
+        "reduction": 0.8817303267372296,
+        "injectionCost": 0.007419,
+        "traversalCost": 0.001671,
+        "nodesRead": 0,
+        "totalNodes": 43
+      },
+      {
+        "id": "hb-6",
+        "docId": "handbook",
+        "task": "information-lookup",
+        "question": "How quickly must critical vulnerabilities be patched?",
+        "injectionTokens": 2176,
+        "traversalTokens": 267,
+        "breakdown": {
+          "index": 48,
+          "dense": 72,
+          "full": 147
+        },
+        "reduction": 0.8772977941176471,
+        "injectionCost": 0.007428,
+        "traversalCost": 0.0017009999999999998,
+        "nodesRead": 2,
+        "totalNodes": 43
+      },
+      {
+        "id": "hb-7",
+        "docId": "handbook",
+        "task": "procedure-execution",
+        "question": "What day does the on-call rotation hand over?",
+        "injectionTokens": 2178,
+        "traversalTokens": 445,
+        "breakdown": {
+          "index": 137,
+          "dense": 149,
+          "full": 159
+        },
+        "reduction": 0.7956841138659321,
+        "injectionCost": 0.007434,
+        "traversalCost": 0.002235,
+        "nodesRead": 2,
+        "totalNodes": 43
+      },
+      {
+        "id": "hb-8",
+        "docId": "handbook",
+        "task": "multi-step-planning",
+        "question": "What happens to feature flags older than ninety days?",
+        "injectionTokens": 2178,
+        "traversalTokens": 308,
+        "breakdown": {
+          "index": 66,
+          "dense": 98,
+          "full": 144
+        },
+        "reduction": 0.8585858585858586,
+        "injectionCost": 0.007434,
+        "traversalCost": 0.001824,
+        "nodesRead": 2,
+        "totalNodes": 43
+      },
+      {
+        "id": "hb-9",
+        "docId": "handbook",
+        "task": "assertion-verification",
+        "question": "Does a refactor need new tests?",
+        "injectionTokens": 2175,
+        "traversalTokens": 468,
+        "breakdown": {
+          "index": 108,
+          "dense": 169,
+          "full": 191
+        },
+        "reduction": 0.7848275862068965,
+        "injectionCost": 0.007424999999999999,
+        "traversalCost": 0.0023039999999999996,
+        "nodesRead": 2,
+        "totalNodes": 43
+      },
+      {
+        "id": "hb-10",
+        "docId": "handbook",
+        "task": "information-lookup",
+        "question": "How much learning time does each engineer get?",
+        "injectionTokens": 2177,
+        "traversalTokens": 279,
+        "breakdown": {
+          "index": 61,
+          "dense": 95,
+          "full": 123
+        },
+        "reduction": 0.8718419843821773,
+        "injectionCost": 0.007431,
+        "traversalCost": 0.001737,
+        "nodesRead": 2,
+        "totalNodes": 43
+      },
+      {
+        "id": "hb-11",
+        "docId": "handbook",
+        "task": "cross-node-reasoning",
+        "question": "Why is suite duration described as a correctness property?",
+        "injectionTokens": 2178,
+        "traversalTokens": 321,
+        "breakdown": {
+          "index": 50,
+          "dense": 73,
+          "full": 198
+        },
+        "reduction": 0.8526170798898072,
+        "injectionCost": 0.007434,
+        "traversalCost": 0.001863,
+        "nodesRead": 2,
+        "totalNodes": 43
+      },
+      {
+        "id": "hb-12",
+        "docId": "handbook",
+        "task": "multi-agent-handoff",
+        "question": "Summarise the rollback expectation for another agent.",
+        "injectionTokens": 2178,
+        "traversalTokens": 144,
+        "breakdown": {
+          "index": 28,
+          "dense": 39,
+          "full": 77
+        },
+        "reduction": 0.9338842975206612,
+        "injectionCost": 0.007434,
+        "traversalCost": 0.0013319999999999999,
+        "nodesRead": 1,
+        "totalNodes": 43
+      }
+    ],
+    "sizeScaling": [
+      {
+        "docId": "skillfile",
+        "cls": "Skill File",
+        "docTokens": 667,
+        "meanInjection": 684,
+        "meanTraversal": 481,
+        "meanReduction": 0.29730643584346533
+      },
+      {
+        "docId": "kb",
+        "cls": "Knowledge Base",
+        "docTokens": 806,
+        "meanInjection": 823,
+        "meanTraversal": 301,
+        "meanReduction": 0.6343762490809542
+      },
+      {
+        "docId": "plan",
+        "cls": "Execution Plan",
+        "docTokens": 819,
+        "meanInjection": 836,
+        "meanTraversal": 321,
+        "meanReduction": 0.6161724698972066
+      },
+      {
+        "docId": "runbook",
+        "cls": "Operational Runbook",
+        "docTokens": 924,
+        "meanInjection": 943,
+        "meanTraversal": 443,
+        "meanReduction": 0.5305283221231435
+      },
+      {
+        "docId": "techdoc",
+        "cls": "Technical Documentation",
+        "docTokens": 957,
+        "meanInjection": 975,
+        "meanTraversal": 231,
+        "meanReduction": 0.7628964245886509
+      },
+      {
+        "docId": "handbook",
+        "cls": "Knowledge Base (large)",
+        "docTokens": 2160,
+        "meanInjection": 2177,
+        "meanTraversal": 339,
+        "meanReduction": 0.8444470581235096
+      }
+    ],
+    "sizeCorrelation": 0.521585250449547
+  },
+  "audit": {
+    "cleanFalsePositiveRate": 0.07692307692307693,
+    "cleanFalsePositives": 4,
+    "cleanCiFindings": 0,
+    "attacks": [
+      {
+        "kind": "keyword-hijack",
+        "label": "Keyword hijack",
+        "description": "Copy the target node's routing keywords onto an unrelated node, so search_index ranks the decoy first.",
+        "tell": "Two nodes claim near-identical keywords while their ::full content is unrelated.",
+        "n": 48,
+        "routingChanged": 48,
+        "routingChangedPct": 1,
+        "queryDetected": 0,
+        "queryDetectedPct": 0,
+        "ciDetected": 48,
+        "ciDetectedPct": 1
+      },
+      {
+        "kind": "confidence-inflation",
+        "label": "Confidence inflation",
+        "description": "Raise a decoy's self-declared conf to 1.0 and lower the correct node's, inverting the ranking.",
+        "tell": "conf is author-declared and unverifiable. A document where everything is 1.00 is not more trustworthy, it is less.",
+        "n": 48,
+        "routingChanged": 16,
+        "routingChangedPct": 0.3333333333333333,
+        "queryDetected": 0,
+        "queryDetectedPct": 0,
+        "ciDetected": 0,
+        "ciDetectedPct": 0
+      },
+      {
+        "kind": "omission",
+        "label": "Omission",
+        "description": "Delete the correct node's row from ::index. The content still exists in the file, but search_index can never surface it, so the agent answers as though it does not exist.",
+        "tell": "A node body with no matching index row. The parser reports this; nothing in the protocol requires the agent to notice.",
+        "n": 48,
+        "routingChanged": 48,
+        "routingChangedPct": 1,
+        "queryDetected": 18,
+        "queryDetectedPct": 0.375,
+        "ciDetected": 48,
+        "ciDetectedPct": 1
+      },
+      {
+        "kind": "dense-lie",
+        "label": "Dense lie",
+        "description": "Rewrite the ::dense summary so it misdescribes the node it belongs to, corrupting the routing decision at Pass 2.",
+        "tell": "::dense and ::full disagree. Detectable only by reading the ::full the summary exists to help you avoid reading.",
+        "n": 48,
+        "routingChanged": 0,
+        "routingChangedPct": 0,
+        "queryDetected": 47,
+        "queryDetectedPct": 0.9791666666666666,
+        "ciDetected": 25,
+        "ciDetectedPct": 0.5208333333333334
+      }
+    ],
+    "topKSurvival": [
+      {
+        "kind": "keyword-hijack",
+        "label": "Keyword hijack",
+        "n": 48,
+        "k1": 0,
+        "k2": 0.25,
+        "k3": 0.3541666666666667
+      },
+      {
+        "kind": "confidence-inflation",
+        "label": "Confidence inflation",
+        "n": 48,
+        "k1": 0.6666666666666666,
+        "k2": 0.8333333333333334,
+        "k3": 0.875
+      },
+      {
+        "kind": "omission",
+        "label": "Omission",
+        "n": 48,
+        "k1": 0,
+        "k2": 0,
+        "k3": 0
+      },
+      {
+        "kind": "dense-lie",
+        "label": "Dense lie",
+        "n": 48,
+        "k1": 1,
+        "k2": 1,
+        "k3": 1
+      }
+    ],
+    "defenceCost": {
+      "firedOn": 4,
+      "of": 52,
+      "tokensWithout": 18067,
+      "tokensWith": 18536,
+      "overhead": 0.025958930647036027
+    }
+  },
+  "answerAccuracy": {
+    "status": "not-run",
+    "reason": "End-to-end answer accuracy requires a language model. No ANTHROPIC_API_KEY was available when this report was generated. The harness exists (scripts/accuracy.ts) and will populate this section when run with a key. It is deliberately left empty rather than estimated."
+  },
+  "limitations": [
+    "n = 52 questions over 6 documents, all authored for this project. This is not the paper's 240-document corpus, which is not public, so these figures are an independent measurement and NOT a reproduction of the paper's 92.0% mean.",
+    "Token counts use cl100k_base, not Claude's tokenizer, which Anthropic does not publish. Both lanes are measured with the identical tokenizer, so the ratio is sound even though absolute counts drift a few percent.",
+    "Traversal cost assumes the agent resolves its top two index candidates. A model that explores more pays more; a model that guesses better pays less. The figure is a model-independent floor, not a prediction of live behaviour.",
+    "Reduction is computed against single-turn injection. A real agent re-injects the document on every turn, so multi-turn savings would be larger. Single-turn is the conservative comparison.",
+    "Answer accuracy is unmeasured. A token reduction that broke correctness would be worthless, and this report cannot yet rule that out.",
+    "Attack effectiveness is measured on routing, not on final answers. A changed route usually means a wrong answer, but the link is inferred rather than observed."
+  ]
+}
