@@ -10,3 +10,8 @@ build/
 *.tsbuildinfo
 next-env.d.ts
 coverage/
+
+# generated at build time by scripts/ (deterministic, no API key needed)
+src/data/corpus.generated.ts
+src/data/codesample.generated.ts
+src/data/benchmark.json

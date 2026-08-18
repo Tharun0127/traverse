@@ -5,7 +5,7 @@
   "description": "An implementation of the ObjectGraph document format (arXiv 2604.27820), plus the first adversarial audit of it.",
   "scripts": {
     "dev": "npm run prebuild && next dev",
-    "prebuild": "tsx scripts/build-corpus.ts",
+    "prebuild": "tsx scripts/build-corpus.ts && tsx scripts/benchmark.ts",
     "build": "npm run prebuild && next build",
     "start": "next start",
     "test": "vitest run",
