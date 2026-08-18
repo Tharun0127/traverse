@@ -2,9 +2,13 @@
  * The two runners.
  *
  * Both are async generators yielding RunEvent. The SSE route pipes them to the
- * browser; scripts/record-runs.ts drains them to JSON. One implementation, two
- * consumers — so what ships in the recorded demo is byte-identical in shape to
- * what a live run produces.
+ * browser; scripts/accuracy.ts drains them to score answers. One implementation,
+ * two consumers — so what the benchmark measures is the same code path the demo
+ * runs.
+ *
+ * These require an API key. The default path on the public deployment uses
+ * simulate.ts instead, which runs the identical primitives and reports genuinely
+ * measured token counts without calling a model. See DECISIONS.md #12.
  */
 
 import Anthropic from "@anthropic-ai/sdk";

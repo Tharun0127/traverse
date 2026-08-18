@@ -4,14 +4,15 @@
   "private": true,
   "description": "An implementation of the ObjectGraph document format (arXiv 2604.27820), plus the first adversarial audit of it.",
   "scripts": {
-    "dev": "npm run prebuild && next dev",
-    "prebuild": "tsx scripts/build-corpus.ts && tsx scripts/benchmark.ts",
-    "build": "npm run prebuild && next build",
+    "generate": "tsx scripts/build-corpus.ts && tsx scripts/benchmark.ts",
+    "dev": "npm run generate && next dev",
+    "prebuild": "npm run generate",
+    "build": "next build",
     "start": "next start",
     "test": "vitest run",
     "test:watch": "vitest",
     "bench": "tsx scripts/benchmark.ts",
-    "record": "tsx scripts/record-runs.ts"
+    "accuracy": "tsx scripts/accuracy.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.32.1",
