@@ -15,3 +15,6 @@ coverage/
 src/data/corpus.generated.ts
 src/data/codesample.generated.ts
 src/data/benchmark.json
+
+# working notes, kept local — not part of the shipped repo
+DECISIONS.md
