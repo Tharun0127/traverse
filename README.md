@@ -4,7 +4,7 @@
 
 The paper argues a document should be a typed graph an agent *navigates*, not a string it *swallows*. Nobody had built it. So: build it, measure it without flattering it, and then attack the layer its own limitations section admits is unexamined.
 
-**▶ Live demo — DEPLOY_URL_PLACEHOLDER**
+**▶ Live demo — _link added once deployed_**
 
 No API key needed. Every number on the site is computed at build time by the real primitives and a real tokenizer — nothing is estimated, nothing is hardcoded.
 
